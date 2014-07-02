@@ -15,6 +15,11 @@ body {
     overflow: auto;
 }
 
+.contentContainer.allowScale {
+    width: inherit;
+    height: inherit;
+}
+
 .content {
     width: 500px;
     background-color: black;
@@ -42,6 +47,11 @@ body {
     height: 64px;
     border-top: 1px solid black;
     background: #DDD;
+    transition: bottom 250ms ease-in-out;
+}
+
+.toolbar.hidden {
+    bottom: -64px;
 }
 
 .toolbar div {

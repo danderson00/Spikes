@@ -21,8 +21,37 @@ $(function () {
                 element.css('transition', '');
             }, 500);
         }, 20);
+
+        setZoomMode();
     });
 
+    var tappingContent;
+    $('.contentContainer')
+        .on('touchstart', function () {
+            tappingContent = true;
+        })
+        .on('touchmove', function () {
+            tappingContent = false;
+        })
+        .on('touchend', function () {
+            if(tappingContent)
+                setNormalMode();
+            tappingContent = undefined;
+        });
+
+    function setZoomMode() {
+        $('.controlContainer').hide();
+        $('.toolbar').addClass('hidden');
+        $('.contentContainer').addClass('allowScale');
+        $('meta[name=viewport]').attr('content', 'width=device-width, initial-scale=1.0');
+    }
+
+    function setNormalMode() {
+        $('.controlContainer').show();
+        $('.toolbar').removeClass('hidden');
+        $('.contentContainer').removeClass('allowScale');
+        $('meta[name=viewport]').attr('content', 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0');
+    }
 
     function scroll(octant) {
         var left = $('.contentContainer').scrollLeft(),
@@ -77,7 +106,7 @@ $(function () {
 
     function getTouchOctant(e) {
         var touch = e.originalEvent.touches[0];
-        return getElementOctant('body', touch.pageX, touch.pageY);
+        return getElementOctant('.control', touch.pageX, touch.pageY);
     }
 
     function getClass(octant) {

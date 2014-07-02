@@ -1,23 +1,10 @@
 $(function () {
     var mouseIsDown = false;
-    $('.main')
-        .on('mousedown', function (e) {
-            start(getElementOctant('.main', e.pageX, e.pageY));
-            mouseIsDown = true;
-        })
-        .on('mousemove', function (e) {
-            if (mouseIsDown) {
-                move(getElementOctant('.main', e.pageX, e.pageY));
-                e.preventDefault();
-            }
-        })
-        .on('mouseup', function () {
-            end();
-            mouseIsDown = false;
-        })
-
+    $('.control')
         .on('touchstart', function (e) {
-            start(getTouchOctant(e));
+            var octant = getTouchOctant(e);
+            start(octant);
+            scroll(octant);
         })
         .on('touchmove', function (e) {
             move(getTouchOctant(e));
@@ -37,6 +24,21 @@ $(function () {
     });
 
 
+    function scroll(octant) {
+        var left = $('.contentContainer').scrollLeft(),
+            top = $('.contentContainer').scrollTop();
+
+        switch (octant) {
+            case 0: $('.contentContainer').scrollTop(top - 20); break;
+            case 1: $('.contentContainer').scrollTop(top - 20).scrollLeft(left + 20); break;
+            case 2: $('.contentContainer').scrollLeft(left + 20); break;
+            case 3: $('.contentContainer').scrollTop(top + 20).scrollLeft(left + 20); break;
+            case 4: $('.contentContainer').scrollTop(top + 20); break;
+            case 5: $('.contentContainer').scrollTop(top + 20).scrollLeft(left - 20); break;
+            case 6: $('.contentContainer').scrollLeft(left - 20); break;
+            case 7: $('.contentContainer').scrollTop(top - 20).scrollLeft(left - 20); break;
+        }
+    }
 
     var current;
 
@@ -58,24 +60,24 @@ $(function () {
         current = undefined;
     }
 
-    function getTouchOctant(e) {
-        var touch = e.originalEvent.touches[0];
-        return getElementOctant('body', touch.pageX, touch.pageY);
-    }
-
     function show(octant) {
         var element = $('.' + getClass(octant));
         element.addClass('opaque');
     }
 
     function hide(octant) {
-        var element = $('.' + getClass(octant));
-        //setTimeout(function () {
-            element.css('transition', 'opacity 500ms linear').removeClass('opaque');
-            setTimeout(function () {
-                element.css('transition', '');
-            }, 500);
-        //}, 20);
+        var element = $('.' + getClass(octant))
+            .css('transition', 'opacity 500ms linear')
+            .removeClass('opaque');
+
+        setTimeout(function () {
+            element.css('transition', '');
+        }, 500);
+    }
+
+    function getTouchOctant(e) {
+        var touch = e.originalEvent.touches[0];
+        return getElementOctant('body', touch.pageX, touch.pageY);
     }
 
     function getClass(octant) {

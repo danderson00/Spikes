@@ -1,0 +1,72 @@
+.arrows div {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 10px;
+}
+
+.n {
+    border-bottom: 24px solid black;
+    border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+    top: 0;
+    left: 50%;
+    margin-left: -24px !important;
+}
+.s {
+    border-top: 24px solid black;
+    border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+    bottom: 0;
+    left: 50%;
+    margin-left: -24px !important;
+}
+.e {
+    border-left: 24px solid black;
+    border-top: 24px solid transparent;
+	border-bottom: 24px solid transparent;
+    top: 50%;
+    right: 0;
+    margin-top: -24px !important;
+}
+.w {
+    border-right: 24px solid black;
+    border-top: 24px solid transparent;
+	border-bottom: 24px solid transparent;
+    top: 50%;
+    left: 0;
+    margin-top: -24px !important;
+}
+.ne {
+    border-top: 16px solid black;
+	border-bottom: 16px solid transparent;
+	border-left: 16px solid transparent;
+    border-right: 16px solid black;
+    top: 0;
+    right: 0;
+}
+.nw {
+    border-top: 16px solid black;
+	border-bottom: 16px solid transparent;
+    border-left: 16px solid black;
+	border-right: 16px solid transparent;
+    top: 0;
+    left: 0;
+}
+.se {
+	border-top: 16px solid transparent;
+    border-bottom: 16px solid black;
+	border-left: 16px solid transparent;
+    border-right: 16px solid black;
+    bottom: 0;
+    right: 0;
+}
+.sw {
+	border-top: 16px solid transparent;
+    border-bottom: 16px solid black;
+    border-left: 16px solid black;
+	border-right: 16px solid transparent;
+    bottom: 0;
+    left: 0;
+}

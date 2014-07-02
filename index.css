@@ -56,46 +56,46 @@ body {
 }
 
 .n {
-    background-image: url(arrow-up.png);
+    background-image: url(images/n.png);
     top: 0;
     left: 50%;
     margin-left: -64px;
 }
 .s {
-    background-image: url(arrow-down.png);
+    background-image: url(images/s.png);
     bottom: 0;
     left: 50%;
     margin-left: -64px;
 }
 .e {
-    background-image: url(arrow-right.png);
+    background-image: url(images/e.png);
     top: 50%;
     right: 0;
     margin-top: -64px;
 }
 .w {
-    background-image: url(arrow-left.png);
+    background-image: url(images/w.png);
     top: 50%;
     left: 0;
     margin-top: -64px;
 }
 .ne {
-    background-image: url(arrow-upright.png);
+    background-image: url(images/ne.png);
     top: 0;
     right: 0;
 }
 .nw {
-    background-image: url(arrow-upleft.png);
+    background-image: url(images/nw.png);
     top: 0;
     left: 0;
 }
 .se {
-    background-image: url(arrow-downright.png);
+    background-image: url(images/se.png);
     bottom: 0;
     right: 0;
 }
 .sw {
-    background-image: url(arrow-downleft.png);
+    background-image: url(images/sw.png);
     bottom: 0;
     left: 0;
 }

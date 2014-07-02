@@ -17,6 +17,8 @@ body {
 
 .content {
     width: 500px;
+    background-color: black;
+    color: white;
 }
 
 .controlContainer {
@@ -55,8 +57,4 @@ body {
 
 .toolbar .active {
     background: #999;
-}
-
-.opaque {
-    opacity: 1 !important;
 }

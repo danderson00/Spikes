@@ -62,13 +62,13 @@ $(function () {
 
     function show(octant) {
         var element = $('.' + getClass(octant));
-        element.addClass('opaque');
+        element.addClass('active');
     }
 
     function hide(octant) {
         var element = $('.' + getClass(octant))
             .css('transition', 'opacity 500ms linear')
-            .removeClass('opaque');
+            .removeClass('active');
 
         setTimeout(function () {
             element.css('transition', '');

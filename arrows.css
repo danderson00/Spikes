@@ -6,8 +6,12 @@
     margin: 10px;
 }
 
+.arrows div.active {
+    opacity: 0.5;
+}
+
 .n {
-    border-bottom: 24px solid black;
+    border-bottom: 24px solid white;
     border-left: 24px solid transparent;
 	border-right: 24px solid transparent;
     top: 0;
@@ -15,7 +19,7 @@
     margin-left: -24px !important;
 }
 .s {
-    border-top: 24px solid black;
+    border-top: 24px solid white;
     border-left: 24px solid transparent;
 	border-right: 24px solid transparent;
     bottom: 0;
@@ -23,7 +27,7 @@
     margin-left: -24px !important;
 }
 .e {
-    border-left: 24px solid black;
+    border-left: 24px solid white;
     border-top: 24px solid transparent;
 	border-bottom: 24px solid transparent;
     top: 50%;
@@ -31,7 +35,7 @@
     margin-top: -24px !important;
 }
 .w {
-    border-right: 24px solid black;
+    border-right: 24px solid white;
     border-top: 24px solid transparent;
 	border-bottom: 24px solid transparent;
     top: 50%;
@@ -39,33 +43,33 @@
     margin-top: -24px !important;
 }
 .ne {
-    border-top: 16px solid black;
+    border-top: 16px solid white;
 	border-bottom: 16px solid transparent;
 	border-left: 16px solid transparent;
-    border-right: 16px solid black;
+    border-right: 16px solid white;
     top: 0;
     right: 0;
 }
 .nw {
-    border-top: 16px solid black;
+    border-top: 16px solid white;
 	border-bottom: 16px solid transparent;
-    border-left: 16px solid black;
+    border-left: 16px solid white;
 	border-right: 16px solid transparent;
     top: 0;
     left: 0;
 }
 .se {
 	border-top: 16px solid transparent;
-    border-bottom: 16px solid black;
+    border-bottom: 16px solid white;
 	border-left: 16px solid transparent;
-    border-right: 16px solid black;
+    border-right: 16px solid white;
     bottom: 0;
     right: 0;
 }
 .sw {
 	border-top: 16px solid transparent;
-    border-bottom: 16px solid black;
-    border-left: 16px solid black;
+    border-bottom: 16px solid white;
+    border-left: 16px solid white;
 	border-right: 16px solid transparent;
     bottom: 0;
     left: 0;

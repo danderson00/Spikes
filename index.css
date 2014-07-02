@@ -50,52 +50,73 @@ body {
 
 .arrows div {
     position: absolute;
-    width: 128px;
-    height: 128px;
     opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 10px;
 }
 
 .n {
-    background-image: url(images/n.png);
+    border-bottom: 48px solid black;
+    border-left: 48px solid transparent;
+	border-right: 48px solid transparent;
     top: 0;
     left: 50%;
-    margin-left: -64px;
+    margin-left: -48px !important;
 }
 .s {
-    background-image: url(images/s.png);
+    border-top: 48px solid black;
+    border-left: 48px solid transparent;
+	border-right: 48px solid transparent;
     bottom: 0;
     left: 50%;
-    margin-left: -64px;
+    margin-left: -48px !important;
 }
 .e {
-    background-image: url(images/e.png);
+    border-left: 48px solid black;
+    border-top: 48px solid transparent;
+	border-bottom: 48px solid transparent;
     top: 50%;
     right: 0;
-    margin-top: -64px;
+    margin-top: -48px !important;
 }
 .w {
-    background-image: url(images/w.png);
+    border-right: 48px solid black;
+    border-top: 48px solid transparent;
+	border-bottom: 48px solid transparent;
     top: 50%;
     left: 0;
-    margin-top: -64px;
+    margin-top: -48px !important;
 }
 .ne {
-    background-image: url(images/ne.png);
+    border-top: 34px solid black;
+	border-bottom: 34px solid transparent;
+	border-left: 34px solid transparent;
+    border-right: 34px solid black;
     top: 0;
     right: 0;
 }
 .nw {
-    background-image: url(images/nw.png);
+    border-top: 34px solid black;
+	border-bottom: 34px solid transparent;
+    border-left: 34px solid black;
+	border-right: 34px solid transparent;
     top: 0;
     left: 0;
 }
 .se {
-    background-image: url(images/se.png);
+	border-top: 34px solid transparent;
+    border-bottom: 34px solid black;
+	border-left: 34px solid transparent;
+    border-right: 34px solid black;
     bottom: 0;
     right: 0;
 }
 .sw {
-    background-image: url(images/sw.png);
+	border-top: 34px solid transparent;
+    border-bottom: 34px solid black;
+    border-left: 34px solid black;
+	border-right: 34px solid transparent;
     bottom: 0;
     left: 0;
 }

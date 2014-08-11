@@ -4,10 +4,6 @@
     <title>Tribe</title>
     
     
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    
 
     
     <script type="text/javascript" src="dependencies/jquery/jquery.js"></script>
@@ -193,6 +189,16 @@
     
     
     <script type="text/javascript">
+        $(function () {
+            T.run({ pubsub: require('tribe').pubsub });
+        });
+    </script>
+</head>
+    
+
+<body><div data-bind="pane: { path: '/layout', handlesNavigation: { transition: 'fade' } }"></div></body>
+
+</html>t/javascript">
         $(function () {
             T.run({ pubsub: require('tribe').pubsub });
         });

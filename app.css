@@ -1,0 +1,501 @@
+.inventory .itemActions {
+    float: right;
+}
+
+.inventory .itemActions > div {
+    width: 24px;
+    height: 24px;
+    float: right;
+}
+
+.columnButtons {
+    clear: both;
+    text-align: center;
+}
+
+.columnButtons > div:first-child {
+    float: left;
+    width: 49%;
+    border-right: 1px solid #CCC;
+}
+
+.columnButtons > div:last-child {
+    float: right;
+    width: 49%;
+}
+.itemList {
+    width: 300px;
+    list-style: none;
+}
+
+.itemList ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.itemList li {
+    margin: 0;
+    padding: 2px;
+}
+
+.itemList .item {
+    position: relative;
+    height: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.map {
+    font-size: 0;
+    font-family: Times New Roman;
+    /* HACK! */
+    width: 1770px;
+}
+
+.map > * {
+    clear: both;
+}
+
+.map * {
+    margin: 0;
+    padding: 0;
+}
+
+.map .tile {
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: black;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+.actions {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.actions > div {
+    float: right;
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.actions .acquire {
+    background-image: url(images/inventory.png);
+}
+.arrows {
+    position: fixed;
+    width: 128px;
+    height: 128px;
+    left: 50%;
+    top: 50%;
+    margin-left: -64px;
+    margin-top: -64px;
+}
+
+.arrows div {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 10px;
+}
+
+.arrows div.active {
+    opacity: 0.5;
+}
+
+.n {
+    border-bottom: 24px solid white;
+    border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+    top: 0;
+    left: 50%;
+    margin-left: -24px !important;
+}
+.s {
+    border-top: 24px solid white;
+    border-left: 24px solid transparent;
+	border-right: 24px solid transparent;
+    bottom: 0;
+    left: 50%;
+    margin-left: -24px !important;
+}
+.e {
+    border-left: 24px solid white;
+    border-top: 24px solid transparent;
+	border-bottom: 24px solid transparent;
+    top: 50%;
+    right: 0;
+    margin-top: -24px !important;
+}
+.w {
+    border-right: 24px solid white;
+    border-top: 24px solid transparent;
+	border-bottom: 24px solid transparent;
+    top: 50%;
+    left: 0;
+    margin-top: -24px !important;
+}
+.ne {
+    border-top: 16px solid white;
+	border-bottom: 16px solid transparent;
+	border-left: 16px solid transparent;
+    border-right: 16px solid white;
+    top: 0;
+    right: 0;
+}
+.nw {
+    border-top: 16px solid white;
+	border-bottom: 16px solid transparent;
+    border-left: 16px solid white;
+	border-right: 16px solid transparent;
+    top: 0;
+    left: 0;
+}
+.se {
+	border-top: 16px solid transparent;
+    border-bottom: 16px solid white;
+	border-left: 16px solid transparent;
+    border-right: 16px solid white;
+    bottom: 0;
+    right: 0;
+}
+.sw {
+	border-top: 16px solid transparent;
+    border-bottom: 16px solid white;
+    border-left: 16px solid white;
+	border-right: 16px solid transparent;
+    bottom: 0;
+    left: 0;
+}
+
+.contentContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: black;
+}
+
+.contentContainer.allowScale {
+    width: inherit;
+    height: inherit;
+}
+
+.content {
+    position: relative;
+    width: 500px;
+    background-color: black;
+    color: white;
+    /* too slow on iPhone... */
+    /*-webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;*/    
+    /*transition: all linear 220ms;*/
+}
+.controlContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.control {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.control div {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 10px;
+}
+
+.control div.active {
+    opacity: 0.5;
+}
+
+.control div.transition {
+    transition: opacity 500ms linear;
+}
+
+.attackButton {
+    position: fixed;
+    left: 10px;
+    bottom: 30px;
+    width: 64px;
+    height: 64px;
+    background-image: url(images/ranged-attack.png);
+}
+
+.saveButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background: white;
+    color: black;
+    opacity: 0.3;
+    text-align: center;
+    padding-top: 19px;
+    box-sizing: border-box;
+}
+.__mobile {
+    -webkit-user-select: none;
+}
+.messages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+}
+
+.messages > div {
+    transition: opacity linear 2000ms;
+}
+.status {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+.status div {
+    float: left;
+    margin-right: 10px;
+}
+
+.status .buttons {
+    float: right;
+    margin: 0;
+}
+
+.status .buttons div {
+    width: 32px;
+    height: 16px;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: bottom center; 
+}
+
+.status .buttons div div {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+}
+
+.status .showInventory {
+    background-image: url(images/inventory-16.png);
+}
+
+.inventoryPopup {
+    position: fixed;
+    bottom: 0;
+}
+
+.inventoryPopup > * {
+    position: absolute;
+    top: 0;
+    transition: top ease-in-out 500ms;
+}
+
+.inventoryPopup .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font: bold 32pt Arial;
+}
+.toolbar {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    background: #DDD;
+    transition: bottom 250ms ease-in-out;
+}
+
+.toolbar.hidden {
+    bottom: -64px;
+}
+
+.toolbar div {
+    width: 20%;
+    height: 64px;
+    float: left;
+    text-align: center;
+    font: 28pt bold Arial;
+    border-left: 1px solid #BBB;
+    margin-left: -1px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.toolbar .transition {
+    transition: background-color 500ms linear;
+}
+
+.toolbar .active {
+    background: #999;
+}
+
+.popup {
+    position: fixed;
+}
+
+.popup > div {
+    position: absolute;
+    background: white;
+    color: black;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.popup.bottom > div {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    bottom: -10000px;
+}
+
+.popup.top > div {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    top: -10000px;
+}
+
+.popup.top .slide {
+    transition: top ease-out 500ms;
+}
+
+.popup.bottom .slide {
+    transition: bottom ease-out 500ms;
+}
+
+.popup.bottom {
+    bottom: 0;
+}
+
+.popup.top {
+    top: 0;
+}
+
+.status {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.damage {
+    position: absolute;
+}
+
+.damage > div {
+    position: relative;
+    top: 0;
+    width: 32px;
+    text-align: center;
+    font: 8pt Arial;
+    color: red;
+
+    transition: all 1500ms linear;
+}
+
+.damage.heal > div {
+    color: green;
+}
+
+.damage .animate {
+    top: -15px;
+    opacity: 0.2;
+}
+
+.page {
+    padding: 5px;
+}
+
+.space {
+    width: 10px;
+    height: 10px;
+}
+
+.__mobile .button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	border-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:36px;
+	line-height:36px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+}
+
+.button.active {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+	position:relative;
+	top:1px;
+}
+ul.select {
+    list-style: none;
+}
+
+ul.select li {
+    padding: 1px 10px 3px 10px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+ul.select li.active {
+    background-color: #444;
+    color: white;
+}
+
+ul.select li.selected {
+    background-image: url(images/tick.png);
+    background-position: 98% 50%;
+    background-repeat: no-repeat;
+}
+body {
+    font-family: 'Segoe UI', Verdana, Arial;
+}
+
+.heading.minor {
+    font-size: 0.7em;
+    font-weight: bold;
+}
